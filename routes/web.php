@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('landingPage/index');
+    return view('landing.index');
 });
-// Route::get('/', function () {
-//     return view('assets/img/');
-// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
+
+Route::get('/transaksi', 'TransaksiController@show');
+Route::get('/signin', 'TransaksiController@show');
