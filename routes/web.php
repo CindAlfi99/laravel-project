@@ -17,3 +17,5 @@ Route::get('/', function () {
 // Route::get('/', function () {
 //     return view('assets/img/');
 // });
+//root 
+
