@@ -14,13 +14,11 @@
 Route::get('/', function () {
     return view('landing.index');
 });
-<<<<<<< HEAD
-// Route::get('/', function () {
-//     return view('assets/img/');
-// });
-//root 
+Route::get('/about', function () {
+    return view('about.about');
+});
 
-=======
+
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
@@ -28,4 +26,3 @@ Route::get('/dashboard', function () {
 
 Route::get('/transaksi', 'TransaksiController@show');
 Route::get('/signin', 'TransaksiController@show');
->>>>>>> 7e24f44faa6e5ab1a2e487c3159fbae7f4aceaab
