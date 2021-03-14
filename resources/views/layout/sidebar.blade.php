@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" aria-current="page" href="{{url('/')}}">
+        <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" aria-current="page" href="{{url('/dashboard')}}">
           <span data-feather="home"></span>
           Dashboard
         </a>
@@ -11,6 +11,12 @@
         <a class="nav-link {{ request()->is('transaksi') ? 'active' : '' }}" href="{{url('/transaksi')}}">
           <span data-feather="file"></span>
           Transaksi
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ request()->is('transaksi') ? 'active' : '' }}" href="{{url('/laporan')}}">
+          <span data-feather="file"></span>
+          Laporan
         </a>
       </li>
     </ul>
