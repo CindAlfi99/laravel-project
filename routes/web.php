@@ -10,14 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('landing.index');
-});
+})->middleware('guest');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+Auth::routes();
 
-Route::get('/transaksi', 'TransaksiController@show');
-Route::get('/signin', 'TransaksiController@show');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@show')->middleware('auth');
+Route::get('/transaksi', 'TransaksiController@show')->middleware('auth');
