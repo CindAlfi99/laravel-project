@@ -12,30 +12,17 @@
 */
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
-// use Illuminate\Routing\Route;
-
+// Ga perlu login dulu. Tapi kalo udah login, ga bisa akses halaman ini lagi
 Route::get('/', function () {
     return view('landing.index');
-});
-// Route::get('/about', function () {
-//     return view('about.about');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard.index');
-// });
-
-Route::get('/transaksi', 'TransaksiController@show');
-Route::get('/signin', 'TransaksiController@show');
-
-// Route::get('/', 'PagesController@landing');
-
-Route::get('/about', 'PagesController@index');
-//routes untuk register
-Route::get('/register', 'Register@index');
-Route::get('/laporan', 'LaporanConstumer@index');
+})->middleware('guest');
+Route::get('/about', 'PagesController@index')->middleware('guest');
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->middleware('auth');;
+// Harus login dulu kalo mau akses halaman di bawah ini
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+Route::get('/laporan', 'LaporanConstumer@index')->middleware('auth');
+Route::get('/transaksi', 'TransaksiController@show')->middleware('auth');
