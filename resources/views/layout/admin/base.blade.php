@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
-@include('layout.head')
+@include('layout.admin.head')
 <body>
-    @include('layout.header')
+    @include('layout.admin.header')
     <div class="container-fluid">
         <div class="row">
-            @include('layout.sidebar')
+            @include('layout.admin.sidebar')
             @yield('content')
         </div>
     </div>
-    @include('layout.script')
+    @include('layout.admin.script')
     @yield('scriptextra')
 </body>
 </html>

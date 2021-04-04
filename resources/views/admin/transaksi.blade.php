@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('layout.admin.base')
 
 @section('title', 'Transaksi')
 

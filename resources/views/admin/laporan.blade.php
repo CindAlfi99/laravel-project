@@ -1,18 +1,7 @@
-@extends('layout.laporan')
-@section('head')
+@extends('layout.admin.base')
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <title>@yield('title')</title>
-</head>
-@endsection
 @section('title', 'Laporan')
+
 @section('content')
 <table class=" m-4 table col-lg-9" border="1">
     <thead class="thead-dark">
