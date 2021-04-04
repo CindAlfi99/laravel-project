@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-
 /* navbar */
 
 #nav {
@@ -45,7 +44,7 @@
 }
 
 .title {
-    font-weight: bolder;
+    font-weight: bold;
     margin-top: 80px;
 }
 
@@ -86,10 +85,6 @@
     background: #f8f9fa;
 }
 
-#pricing h4 {
-    margin-top: 15%;
-}
-
 #pricing ul li {
     margin-top: 10px;
     list-style: none;
@@ -123,4 +118,33 @@
     color: #fff !important;
     font-weight: bolder;
     text-transform: uppercase;
+}
+
+.btn-auth {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+@media all and (max-width:480px) {
+    .btn-custom {
+        width: 100%; display:block;
+    }
+    #features {
+        padding: 0;
+    }
+    .wave {
+        bottom: 0;
+    }
+    .title {
+        margin-top: 0;
+    }
+    .banner-text {
+        position: relative;
+        z-index: 1000;
+    }
+    #pricing {
+        padding: 1rem 0;
+        background: #f8f9fa;
+    }
 }
