@@ -13,7 +13,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     /**
@@ -23,6 +23,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        return view('admin.dashboard.index');
+    }
+
+    public function detailShow()
+    {
+        return view('admin.dashboard.detail');
     }
 }

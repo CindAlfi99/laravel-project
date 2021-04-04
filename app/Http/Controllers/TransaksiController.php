@@ -12,8 +12,13 @@ class TransaksiController extends Controller
      * @param  int  $id
      * @return View
      */
-    public function show()
+    public function __construct()
     {
-        return view('transaksi.index', ['data' => array('1' => 'foo')]);
+        $this->middleware('admin');
+    }
+
+    public function index()
+    {
+        return view('admin.transaksi', ['data' => array('1' => 'foo')]);
     }
 }

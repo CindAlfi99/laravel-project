@@ -29,12 +29,12 @@
     </thead>
     <tbody>
 
-        @foreach($constumers as $const)
+        @foreach($customers as $customer)
         <tr>
             <th scope="row">{{$loop->iteration}}</th>
-            <td>{{$const->name}}</td>
-            <td>{{$const->email}}</td>
-            <td>{{$const->created_at}}</td>
+            <td>{{$customer->name}}</td>
+            <td>{{$customer->email}}</td>
+            <td>{{$customer->created_at}}</td>
 
             <td><a href="" class="badge badge-success">Edit</a><a href="" class="badge badge-danger">Delete</a></td>
         </tr>
