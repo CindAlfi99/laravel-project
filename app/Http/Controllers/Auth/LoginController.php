@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request as Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,18 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    // protected $redirectTo = '/dashboard';
+    public function redirectTo() {
+        $role = Auth::user()->role; 
+        switch ($role) {
+          case 'admin':
+            return '/dashboard';
+            break;
+          default:
+            return '/home'; 
+          break;
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -39,7 +51,7 @@ class LoginController extends Controller
     }
 
     protected function authenticated(Request $request, $user)
- {
+    {
         $request->session()->flash('success', 'Howdy, ' . $user->name . '!');
         return redirect()->intended($this->redirectPath());
     }
